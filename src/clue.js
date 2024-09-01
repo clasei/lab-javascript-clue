@@ -189,9 +189,20 @@ function pickMystery() {
 
 console.log(pickMystery());
 
+let mysteryTestOne = pickMystery()
+let mysteryTestTwo = pickMystery()
+let mysteryTestThree = pickMystery()
+
 
 // **********
 // ITERATION 3
 
-function revealMystery() {}
+function revealMystery(envelope) {
+  // object envelope received as an argument comes from pickMystery; same route to access values
+  // return statement constructs a string using the object envelope properties
+  return `${envelope.suspect.firstName} ${envelope.suspect.lastName} killed Mr. Boddy using the ${envelope.weapon.name} in the ${envelope.room.name}!`;
+}
 
+console.log(revealMystery(mysteryTestOne))
+console.log(revealMystery(mysteryTestTwo))
+console.log(revealMystery(mysteryTestThree))
