@@ -1,3 +1,4 @@
+// **********
 // ITERATION 1
 
 // Suspects Array
@@ -150,13 +151,46 @@ const roomsArray = [
 ];
 
 
+// **********
 // ITERATION 2
+// select 3 random cards to create the mistery
+// create a function to select a random card for each array and return one element
+// create a function to return the previous result as the mistery = object + 3 properties
 
-function selectRandom() {}
+function selectRandom(clueArr) {
+  let randomIndex = Math.floor(Math.random() * clueArr.length);
+  // Math.floor needed to convert to int and get a specific element from the array
 
-function pickMystery() {}
+  randomCard = clueArr[randomIndex];
+  // randomIndex applied to get a specific element form the array
+  // it gets the element calculated before with the random formula defined
+
+  return randomCard;
+}
+
+console.log(selectRandom(suspectsArray));
+console.log(selectRandom(weaponsArray));
+console.log(selectRandom(roomsArray));
+
+//
+
+function pickMystery() {
+  // the function takes no argument and returns 3 objects
+  // function selectRandom applied to obtain the expected result
+
+  let mistery = {
+    suspect: selectRandom(suspectsArray),
+    weapon: selectRandom(weaponsArray),
+    room: selectRandom(roomsArray),
+  };
+
+  return mistery;
+}
+
+console.log(pickMystery());
 
 
+// **********
 // ITERATION 3
 
 function revealMystery() {}
